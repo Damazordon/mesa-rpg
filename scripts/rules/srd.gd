@@ -379,4 +379,5 @@ func _run_tests() -> void:
 	await RulesTests.run_combat()
 	await RulesTests.run_room()
 	await RulesTests.run_terrain()
+	RulesTests.run_icons()
 	get_tree().quit(1 if RulesTests.fails > 0 else 0)

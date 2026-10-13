@@ -913,3 +913,37 @@ static func run_terrain() -> void:
 	for k in keep:
 		g.set(k, keep[k])
 	print("== terreno: %d ok, %d falhas" % [passes - p0, fails - f0])
+
+
+static func run_icons() -> void:
+	print("== testes de ícones (game-icons)")
+	var p0 := passes
+	var f0 := fails
+	var credits := FileAccess.get_file_as_string(GameIcons.DIR + "CREDITS.txt")
+	check("CREDITS.txt existe e cita CC BY 3.0", credits.contains("CC BY 3.0"), true)
+	for wid in Srd.weapons.keys():
+		var r := GameIcons.ref("weapon", str(wid))
+		check("arma %s tem ícone próprio" % wid, r != "", true)
+		_check_icon_file("arma " + str(wid), r, credits)
+	for sk in Srd.skills():
+		var r2 := GameIcons.ref("skill", str(sk))
+		check("perícia %s tem ícone" % sk, r2 != "", true)
+		_check_icon_file("perícia " + str(sk), r2, credits)
+	for k in ["melee", "ranged", "unarmed"]:
+		_check_icon_file("genérico " + k, GameIcons.ref("generic", k), credits)
+	# ataques
+	check("golpe desarmado tem ícone", GameIcons.attack_texture({"weapon_id": "", "kind": "unarmed"}) != null, true)
+	check("mordida (sem arma) não tem ícone", GameIcons.attack_texture({"weapon_id": "", "kind": "natural"}) == null, true)
+	check("arma sob medida cai no genérico corpo a corpo", GameIcons.weapon_ref("espada_custom"), GameIcons.ref("generic", "melee"))
+	check("arma sob medida à distância cai no genérico de arco", GameIcons.weapon_ref("arco_custom", true), GameIcons.ref("generic", "ranged"))
+	check("espada longa devolve textura", GameIcons.attack_texture({"weapon_id": "longsword"}) != null, true)
+	print("== ícones: %d ok, %d falhas" % [passes - p0, fails - f0])
+
+
+static func _check_icon_file(label: String, r: String, credits: String) -> void:
+	if r == "":
+		return
+	check(label + ": arquivo existe", FileAccess.file_exists(GameIcons.DIR + r + ".svg"), true)
+	var tex := GameIcons.load_ref(r)
+	check(label + ": carrega textura", tex != null and tex.get_width() > 0, true)
+	check(label + ": autor está nos créditos", credits.contains("[pasta %s/]" % r.get_slice("/", 0)), true)

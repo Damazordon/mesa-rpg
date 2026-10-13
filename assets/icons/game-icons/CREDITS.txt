@@ -1,0 +1,70 @@
+Ícones de game-icons.net, licença Creative Commons Attribution 3.0 (CC BY 3.0):
+https://creativecommons.org/licenses/by/3.0/
+Fonte: https://game-icons.net  (repositório github.com/game-icons/icons)
+Modificação: removido o quadrado preto de fundo e fixado o traço em branco.
+
+Icons made by:
+  - Carl Olsen (twitter.com/unstoppableCarl)   [pasta carl-olsen/]
+  - DarkZaitzev (darkzaitzev.deviantart.com)   [pasta darkzaitzev/]
+  - Delapouite (delapouite.com)   [pasta delapouite/]
+  - John Colburn (ninmunanmu.com)   [pasta john-colburn/]
+  - Lorc (lorcblog.blogspot.com)   [pasta lorc/]
+  - Skoll   [pasta skoll/]
+
+Ícone por arquivo:
+  carl-olsen/crossbow
+  darkzaitzev/acrobatic
+  darkzaitzev/hooded-figure
+  delapouite/all-seeing-eye
+  delapouite/ancient-columns
+  delapouite/angry-eyes
+  delapouite/bow-arrow
+  delapouite/carnival-mask
+  delapouite/dart
+  delapouite/eye-target
+  delapouite/flail
+  delapouite/flanged-mace
+  delapouite/glaive
+  delapouite/hatchet
+  delapouite/lockpicks
+  delapouite/pan-flute
+  delapouite/shaking-hands
+  delapouite/sickle
+  delapouite/sling
+  delapouite/spear-feather
+  delapouite/spell-book
+  delapouite/stethoscope
+  delapouite/straight-pipe
+  delapouite/two-handed-sword
+  delapouite/war-axe
+  delapouite/war-pick
+  delapouite/warhammer
+  delapouite/wood-club
+  delapouite/wood-stick
+  john-colburn/pistol-gun
+  lorc/battle-axe
+  lorc/broadsword
+  lorc/campfire
+  lorc/crossed-swords
+  lorc/flat-hammer
+  lorc/halberd
+  lorc/hammer-drop
+  lorc/high-shot
+  lorc/holy-symbol
+  lorc/magnifying-glass
+  lorc/muscle-up
+  lorc/paw-print
+  lorc/piercing-sword
+  lorc/pine-tree
+  lorc/plain-dagger
+  lorc/punch
+  lorc/sparkling-sabre
+  lorc/spear-hook
+  lorc/spears
+  lorc/spiked-mace
+  lorc/stone-spear
+  lorc/trident
+  lorc/whip
+  skoll/gladius
+  skoll/musket
+  skoll/spiked-bat

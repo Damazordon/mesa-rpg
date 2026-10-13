@@ -305,6 +305,18 @@ func _make_card(ab: Dictionary, index: int) -> Button:
 	v.offset_bottom = -5
 	v.add_theme_constant_override("separation", 0)
 	b.add_child(v)
+	var icon_tex: Texture2D = null
+	if ab.get("kind", "") == "attack" and ab.get("ref") is Dictionary:
+		icon_tex = GameIcons.attack_texture(ab["ref"])
+	if icon_tex != null:
+		v.offset_right = -34
+		var icon := GameIcons.rect(icon_tex, 26, Color(kind_col, 0.85))
+		icon.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
+		icon.offset_left = -32
+		icon.offset_top = -32
+		icon.offset_right = -6
+		icon.offset_bottom = -6
+		b.add_child(icon)
 	var name_l := UiTheme.wrap_label(str(ab["name"]), 15, UiTheme.BONE, UiTheme.sans_bold())
 	name_l.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	v.add_child(name_l)

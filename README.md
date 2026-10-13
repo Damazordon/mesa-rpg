@@ -172,6 +172,19 @@ https://creativecommons.org/licenses/by/4.0/legalcode.
 Essa atribuição precisa aparecer no jogo publicado (créditos). Não use as marcas "Dungeons & Dragons"
 ou "D&D" no nome ou na divulgação; dá para dizer "compatível com a 5ª edição".
 
+## Licença dos ícones
+
+Os ícones de armas e perícias vêm do [game-icons.net](https://game-icons.net) e estão sob
+[Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/) (uso comercial permitido,
+**com atribuição**). Autores usados: Lorc, Delapouite, Skoll, Carl Olsen, John Colburn e DarkZaitzev.
+A lista completa, ícone por ícone, está em `assets/icons/game-icons/CREDITS.txt`; essa atribuição também
+precisa aparecer nos créditos do jogo publicado ("Icons made by Lorc, Delapouite, ... from game-icons.net").
+Modificação feita: removido o quadrado preto de fundo e fixado o traço em branco, para o jogo tingir o ícone.
+
+Para trocar um ícone, edite `tools/icons/icon_map.py` e rode
+`python3 tools/icons/build_icons.py <clone de github.com/game-icons/icons>` (regrava `assets/icons/`
+e `data/icons.json`). O código que lê a tabela é `scripts/core/icon_store.gd` (`GameIcons`).
+
 ## Gerar o executável
 
 No Godot: **Editor > Gerenciar modelos de exportação > Baixar**, depois

@@ -15,6 +15,14 @@ signal level_changed(level: String)
 const URL := "http://127.0.0.1:11434/api/chat"
 const MODEL := "qwen3.5:4b"
 const TIMEOUT_S := 25.0
+## Janela de contexto ÚNICA para todas as chamadas (mestre, aventura, lore). O Ollama recarrega o
+## modelo na VRAM quando o num_ctx muda entre chamadas; com valores diferentes (4096 aqui e 8192
+## na geração) cada troca custava uma recarga inteira. Também mantém o cache de prefixo valendo.
+const NUM_CTX := 8192
+## Quanto tempo o Ollama mantém o modelo na memória depois da última chamada (padrão dele: 5 min).
+const KEEP_ALIVE := "30m"
+## Teto de tokens de saída do mestre (a resposta JSON normal tem ~150). Só corta texto descontrolado.
+const MASTER_MAX_TOKENS := 450
 
 ## Perfil de cada nível: tom (prompt), ajuste de CD (motor), temperatura e punição na falha.
 const LEVELS := {
@@ -43,6 +51,7 @@ const LEVELS := {
 
 var level := "normal"
 var _http: HTTPRequest
+var _warm: HTTPRequest
 var _pending := false
 
 
@@ -53,6 +62,41 @@ func _ready() -> void:
 	_http = HTTPRequest.new()
 	_http.timeout = TIMEOUT_S
 	add_child(_http)
+	# Requisição própria para o aquecimento: o HTTPRequest atende um pedido por vez.
+	_warm = HTTPRequest.new()
+	_warm.timeout = 180.0
+	add_child(_warm)
+	warm_up.call_deferred()
+
+
+## Carrega o modelo na VRAM em segundo plano (mensagens vazias = só carregar, o Ollama não gera
+## nada). Assim o primeiro pedido de verdade não paga a carga do disco. Ignora a resposta:
+## se o Ollama estiver fechado, nada acontece. Não roda nos testes sem janela.
+func warm_up() -> void:
+	if DisplayServer.get_name() == "headless" or _warm == null:
+		return
+	if _warm.get_http_client_status() != HTTPClient.STATUS_DISCONNECTED:
+		return
+	var body := {"model": MODEL, "messages": [], "stream": false, "keep_alive": KEEP_ALIVE,
+		"options": {"num_ctx": NUM_CTX}}
+	_warm.request(URL, ["Content-Type: application/json"], HTTPClient.METHOD_POST, JSON.stringify(body))
+
+
+## Corpo padrão das chamadas ao Ollama, para mestre, aventura e lore usarem os MESMOS parâmetros
+## de carga (modelo, num_ctx, keep_alive). Mudar um deles em uma chamada só força recarga.
+func chat_body(system: String, user: String, temp: float, max_tokens: int) -> Dictionary:
+	return {
+		"model": MODEL,
+		"stream": false,
+		"think": false,
+		"format": "json",
+		"keep_alive": KEEP_ALIVE,
+		"options": {"temperature": temp, "num_ctx": NUM_CTX, "num_predict": max_tokens},
+		"messages": [
+			{"role": "system", "content": system},
+			{"role": "user", "content": user},
+		],
+	}
 
 
 func set_level(new_level: String) -> void:
@@ -134,17 +178,8 @@ func _system_prompt() -> String:
 
 
 func _ask_model(actor: Dictionary, text: String) -> Dictionary:
-	var body := {
-		"model": MODEL,
-		"stream": false,
-		"think": false,
-		"format": "json",
-		"options": {"temperature": float(LEVELS[level]["temp"]), "num_ctx": 4096},
-		"messages": [
-			{"role": "system", "content": _system_prompt()},
-			{"role": "user", "content": "%s\n\nJogador diz: %s" % [_scene_context(actor), text]},
-		],
-	}
+	var body := chat_body(_system_prompt(), "%s\n\nJogador diz: %s" % [_scene_context(actor), text],
+		float(LEVELS[level]["temp"]), MASTER_MAX_TOKENS)
 	var err := _http.request(URL, ["Content-Type: application/json"], HTTPClient.METHOD_POST, JSON.stringify(body))
 	if err != OK:
 		return {}

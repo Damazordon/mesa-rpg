@@ -14,6 +14,11 @@ extends Node
 signal status(text: String)
 
 const TIMEOUT_S := 180.0
+## Teto de tokens de saída. A aventura de 5 capítulos tem ~3.500 tokens; o prompt ocupa ~2.000 do
+## contexto de 8192, então 5.500 cabe. Só corta repetição descontrolada do modelo (que, com
+## format=json, às vezes não para). Se estourar, o JSON vem incompleto e cai no modelo do motor.
+const MAX_TOKENS_ADVENTURE := 5500
+const MAX_TOKENS_LORE := 2000
 
 ## Orçamento de XP por personagem (Leve, Moderado, Difícil), tabela do Guia do Mestre 2024
 ## escrita de memória para os níveis 1 a 5. Conferir no livro antes de publicar.
@@ -78,17 +83,7 @@ func generate(cfg: Dictionary, use_ai := true) -> Dictionary:
 # ---------------------------------------------------------------- IA
 
 func _ask_model(cfg: Dictionary) -> Dictionary:
-	var body := {
-		"model": Master.MODEL,
-		"stream": false,
-		"think": false,
-		"format": "json",
-		"options": {"temperature": 0.9, "num_ctx": 8192},
-		"messages": [
-			{"role": "system", "content": system_prompt(cfg)},
-			{"role": "user", "content": user_prompt(cfg)},
-		],
-	}
+	var body: Dictionary = Master.chat_body(system_prompt(cfg), user_prompt(cfg), 0.9, MAX_TOKENS_ADVENTURE)
 	var err := _http.request(Master.URL, ["Content-Type: application/json"], HTTPClient.METHOD_POST, JSON.stringify(body))
 	if err != OK:
 		return {}
@@ -713,14 +708,8 @@ func _ask_lore(adv: Dictionary, players: Array) -> Dictionary:
 	sys += "Depois, um gancho pessoal curto para cada personagem, usando o objetivo dele.\n"
 	sys += "Formato: {\"lore\": \"<3 a 6 parágrafos curtos separados por linha vazia>\", "
 	sys += "\"hooks\": [{\"name\": \"<nome exato do personagem>\", \"hook\": \"<1 frase>\"}]}"
-	var body := {
-		"model": Master.MODEL, "stream": false, "think": false, "format": "json",
-		"options": {"temperature": 0.85, "num_ctx": 8192},
-		"messages": [
-			{"role": "system", "content": sys},
-			{"role": "user", "content": "Lore atual:\n%s\n\nGrupo:\n%s" % [str(adv.get("lore", "")).left(2000), who]},
-		],
-	}
+	var body: Dictionary = Master.chat_body(sys, "Lore atual:\n%s\n\nGrupo:\n%s" % [str(adv.get("lore", "")).left(2000), who],
+		0.85, MAX_TOKENS_LORE)
 	var err := _http.request(Master.URL, ["Content-Type: application/json"], HTTPClient.METHOD_POST, JSON.stringify(body))
 	if err != OK:
 		return {}

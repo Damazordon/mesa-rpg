@@ -276,9 +276,12 @@ func _page_status(c: Dictionary) -> Control:
 	sk_list.sort_custom(func(x, y): return Srd.skill_name(x) < Srd.skill_name(y))
 	for sk in sk_list:
 		var line := _row(8)
-		line.custom_minimum_size.x = 270
+		line.custom_minimum_size.x = 300
 		var p := Rules.skill_prof(c, sk)
 		line.add_child(_ink(["○", "●", "●●"][p], 14, UiTheme.sans_bold(), p == 0))
+		var sk_tex := GameIcons.skill_texture(sk)
+		if sk_tex != null:
+			line.add_child(GameIcons.rect(sk_tex, 20, Color(UiTheme.BONE, 0.45 if p == 0 else 0.95)))
 		line.add_child(_ink("%s (%s)" % [Srd.skill_name(sk), Srd.ability_abbr(Srd.skill_ability(sk))], 17, null, p == 0))
 		line.add_child(UiTheme.spacer(false))
 		line.add_child(_ink("%+d" % Rules.skill_bonus(c, sk), 17, UiTheme.sans_bold()))
@@ -413,8 +416,11 @@ func _page_inventory(c: Dictionary) -> Control:
 	var atk := _section("Ataques")
 	for a in c.get("attacks", []):
 		var line := _row(10)
+		var atk_tex := GameIcons.attack_texture(a)
+		if atk_tex != null:
+			line.add_child(GameIcons.rect(atk_tex, 26, UiTheme.BONE))
 		var nm := _ink(str(a["name"]), 18, UiTheme.sans_bold())
-		nm.custom_minimum_size.x = 210
+		nm.custom_minimum_size.x = 184 if atk_tex != null else 210
 		line.add_child(nm)
 		line.add_child(_ink("%+d" % int(a["to_hit"]), 18, UiTheme.sans_bold()))
 		line.add_child(_ink("%s %s" % [a["damage"], Srd.dtype_name(str(a["dtype"]))], 17))
