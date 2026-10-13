@@ -1,0 +1,33 @@
+{
+  "id": "realista",
+  "name": "Realista",
+  "description": "Sem magia e sem espécies fantásticas: só humanos, aço e esperteza. Classes que conjuram magias ficam de fora.",
+  "currency": "moedas",
+  "tone": "seco e pé no chão",
+  "allow": {
+    "class": [
+      "barbarian",
+      "fighter",
+      "monk",
+      "rogue"
+    ],
+    "species": [
+      "human"
+    ]
+  },
+  "deny": {
+    "feat": [
+      "magic_initiate",
+      "boon_of_dimensional_travel",
+      "boon_of_the_night_spirit",
+      "boon_of_truesight",
+      "boon_of_spell_recall"
+    ]
+  },
+  "rename": {
+    "class": {
+      "barbarian": "Guerreiro Tribal",
+      "monk": "Artista Marcial"
+    }
+  }
+}

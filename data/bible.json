@@ -1,0 +1,17 @@
+{
+  "npcs": [
+    {"name": "Mestra Odila", "role": "Líder da guilda dos mineiros", "known": "Contratou o grupo. Escondeu que esta não é a primeira equipe que some."},
+    {"name": "Durrin", "role": "Mineiro, irmão de Borin", "known": "Desaparecido. Deixou marcas de giz nas paredes da galeria principal."},
+    {"name": "Grisk", "role": "Chefe goblin", "known": "Os goblins falam dele com medo. Ninguém do grupo o viu ainda."},
+    {"name": "A voz no poço", "role": "Desconhecido", "known": "Responde quando alguém grita perto do poço de ventilação."}
+  ],
+  "factions": [
+    {"name": "Guilda dos mineiros", "role": "Contratante", "known": "Quer os mineiros de volta e a mina reaberta, nessa ordem ou não."},
+    {"name": "Tribo Dente-Quebrado", "role": "Goblins", "known": "Ocupam os túneis superiores. Armaram as armadilhas da entrada."}
+  ],
+  "places": [
+    {"name": "Galeria principal", "role": "Entrada da mina", "known": "Trilhos de carrinho, lanternas apagadas, marcas de giz."},
+    {"name": "Poço de ventilação", "role": "Ao norte", "known": "Desce até onde a corda alcança. Venta para cima, não para baixo."},
+    {"name": "Túnel norte", "role": "Inexplorado", "known": "Bloqueado por um carrinho tombado e algo arrastado."}
+  ]
+}

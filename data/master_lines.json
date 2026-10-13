@@ -1,0 +1,304 @@
+{
+  "taunts": {
+    "player_crit": [
+      "Tá, essa foi boa. Não se acostuma.",
+      "Vinte natural. Vou fingir que não doeu.",
+      "Anotado. Vou lembrar disso quando o chefe aparecer, {nome}."
+    ],
+    "player_fumble": [
+      "Nem precisei fazer nada. Você se derrotou sozinho.",
+      "Um. O dado também tem senso de humor, {nome}.",
+      "Vou deixar o goblin rir dessa. Ele mereceu."
+    ],
+    "player_miss": [
+      "Quase. Do jeito que quase não conta.",
+      "O goblin agradece a gentileza, {nome}."
+    ],
+    "enemy_down": [
+      "Tudo bem. Eu tenho mais goblins do que vocês têm pontos de vida.",
+      "Esse era o mais fraco. Os outros estudaram.",
+      "Ok, {nome}. Ponto seu."
+    ],
+    "enemy_hit_hard": [
+      "Isso vai deixar marca, {nome}.",
+      "Eu avisei que eles estudaram."
+    ],
+    "party_down": [
+      "{nome} vai tirar um cochilo. Alguém aí tem poção?",
+      "Calma, ninguém morreu. Ainda."
+    ],
+    "idle": [
+      "Sem pressa. O goblin adora esperar.",
+      "Posso pedir um café enquanto vocês decidem?",
+      "A vela da guilda está queimando, {nome}."
+    ],
+    "plan_absurd": [
+      "Ousado. Burro, mas ousado.",
+      "Adoro quando vocês tentam isso. Role o dado."
+    ],
+    "victory": [
+      "Aproveitem. O próximo eu desenhei pensando em vocês.",
+      "Vitória. Agora olhem o túnel norte e me digam se continuam confiantes."
+    ],
+    "defeat": [
+      "Eu disse que ia ganhar. Jogando limpo, ainda por cima."
+    ],
+    "complaint": [
+      "Tá tudo no histórico. Pode conferir."
+    ]
+  },
+  "moods": {
+    "player_crit": "irritado",
+    "enemy_down": "irritado",
+    "victory": "irritado",
+    "player_fumble": "satisfeito",
+    "player_miss": "satisfeito",
+    "party_down": "satisfeito",
+    "enemy_hit_hard": "satisfeito",
+    "defeat": "satisfeito",
+    "idle": "entediado",
+    "plan_absurd": "satisfeito",
+    "complaint": "neutro"
+  },
+  "mood_text": {
+    "neutro": "observando a mesa",
+    "satisfeito": "satisfeito demais",
+    "irritado": "fingindo que não ligou",
+    "entediado": "batendo os dedos no escudo"
+  },
+  "narration_generic": [
+    "O túnel devolve o eco da sua voz um segundo atrasado. Os goblins trocam olhares, sem saber se isso foi uma ameaça.",
+    "Nada acontece de imediato. Mas o carrinho tombado range, como se algo atrás dele tivesse mudado de posição.",
+    "O cheiro de óleo de lanterna fica mais forte. Alguém, em algum lugar da mina, acabou de acender uma luz."
+  ],
+  "check_success": [
+    "Funciona. {nome} consegue, e por um instante os goblins parecem realmente preocupados.",
+    "Sucesso. A mina, pela primeira vez, colabora com {nome}."
+  ],
+  "check_fail": [
+    "Não funciona. {nome} faz barulho suficiente para todo o túnel saber exatamente onde está.",
+    "Falhou. Os goblins não riem alto, mas dá para ver que querem."
+  ],
+  "waiting": "O mestre está decidindo o que o {nome} faz.",
+  "hints": [
+    {
+      "match": "injust|roub(ou|ado)|trapa",
+      "taunt": "complaint"
+    },
+    {
+      "match": "vou at[eé]|me aproxim|and(o|ar) at[eé]|corr(o|er) at[eé]|chego perto|me mov",
+      "say": "Ande, então. Clique no seu token (ou aperte M) e escolha o destino. O círculo mostra até onde você chega."
+    },
+    {
+      "match": "\\b(ataco|atacar|acerto|golpeio|bato n)",
+      "say": "Para atacar, use os atalhos da barra de baixo. Eu cuido do que acontece depois, {nome}."
+    }
+  ],
+  "intents": [
+    {
+      "id": "recrutar",
+      "match": "aliad|nosso lado|do lado da gente|recrut|mudar de lado|trocar de lado|traia|trair|juntar.{0,12}(a gente|n[oó]s)|lutar (com a gente|conosco)|virar amigo",
+      "skill": "Persuasão",
+      "attr": "car",
+      "dc": 15,
+      "needs_target": true,
+      "max_m": 18,
+      "easier_if_wounded": true,
+      "harder_with_friends": true,
+      "ask": "{alvo} abaixa a arma por meio segundo, desconfiado. Convencer um goblin a trair a tribo não é pouca coisa. {nome}, role Persuasão, CD {cd}.",
+      "success": "{alvo} olha para os companheiros, depois para vocês. Cospe no chão e vira a lâmina para o outro lado. Pelo visto, a tribo pagava mal.",
+      "fail": "{alvo} ri na cara de {nome}. A lealdade ao chefe pesa mais do que qualquer conversa bonita.",
+      "effects_success": [
+        {
+          "type": "side",
+          "value": "ally"
+        }
+      ],
+      "effects_fail": []
+    },
+    {
+      "id": "intimidar",
+      "match": "intimid|assust|amea[cç]|rend[ae]|se render|larg(ar|ue|a) a arma|desist|foge|fugir",
+      "skill": "Intimidação",
+      "attr": "car",
+      "dc": 13,
+      "needs_target": true,
+      "max_m": 12,
+      "easier_if_wounded": true,
+      "ask": "{nome} encara {alvo} sem piscar. {nome}, role Intimidação, CD {cd}.",
+      "success": "{alvo} recua dois passos, tremendo. Não vai se aproximar tão cedo.",
+      "success_wounded": "Ferido e apavorado, {alvo} larga a arma e corre para longe dos trilhos.",
+      "fail": "{alvo} engole em seco, mas fica. Medo do chefe ainda é maior que medo de {nome}.",
+      "effects_success": [
+        {
+          "type": "condition",
+          "id": "amedrontado",
+          "rounds": 2,
+          "who": "target"
+        }
+      ],
+      "effects_success_wounded": [
+        {
+          "type": "flee"
+        }
+      ],
+      "effects_fail": []
+    },
+    {
+      "id": "enganar",
+      "match": "engan|mentir|minto|blef|distra|finj|fingir|olha ali|truque|enrolar",
+      "skill": "Enganação",
+      "attr": "car",
+      "dc": 14,
+      "needs_target": true,
+      "max_m": 12,
+      "ask": "{alvo} inclina a cabeça, tentando entender o que {nome} está tramando. {nome}, role Enganação, CD {cd}.",
+      "success": "{alvo} cai direitinho e passa um bom tempo olhando para o lado errado.",
+      "fail": "{alvo} não acredita numa palavra. Agora está prestando ainda mais atenção em {nome}.",
+      "effects_success": [
+        {
+          "type": "condition",
+          "id": "incapacitado",
+          "rounds": 1,
+          "who": "target"
+        }
+      ],
+      "effects_fail": []
+    },
+    {
+      "id": "interrogar",
+      "match": "pergunt|interrog|onde (est|fic|lev)|quem [eé]|por ?que|me (diz|diga|conta)|conta pra|falar com|conversar|negoci|o que voc",
+      "skill": "Persuasão",
+      "attr": "car",
+      "dc": 12,
+      "needs_target": true,
+      "max_m": 12,
+      "easier_if_wounded": true,
+      "ask": "{alvo} hesita entre falar e fugir. {nome}, role Persuasão, CD {cd}.",
+      "fail": "{alvo} só rosna e cospe uma palavra que nenhum dicionário registra.",
+      "effects_success": [],
+      "effects_fail": []
+    },
+    {
+      "id": "intuicao",
+      "match": "mentindo|intui|desconfi|sincer|confiar n|est[aá] escondendo",
+      "skill": "Intuição",
+      "attr": "sab",
+      "dc": 12,
+      "needs_target": true,
+      "max_m": 18,
+      "uses_action": false,
+      "ask": "{nome} estuda o rosto de {alvo}. Role Intuição, CD {cd}.",
+      "success": "{alvo} tem mais medo do chefe do que de vocês. Dá para usar isso.",
+      "fail": "Impossível ler {alvo}. Ou é muito esperto, ou não pensa em nada mesmo.",
+      "effects_success": [],
+      "effects_fail": []
+    },
+    {
+      "id": "esconder",
+      "match": "escond|esgueir|furtiv|sorrateir|nas sombras",
+      "skill": "Furtividade",
+      "attr": "des",
+      "dc": 14,
+      "ask": "As sombras do carrinho dão cobertura, se você for rápido. {nome}, role Furtividade, CD {cd}.",
+      "success": "{nome} some nas sombras. Os inimigos perdem a pista até o próximo turno.",
+      "fail": "{nome} chuta uma pedra solta. Todo o túnel sabe onde você está.",
+      "effects_success": [
+        {
+          "type": "condition",
+          "id": "escondido",
+          "rounds": 1,
+          "who": "actor"
+        }
+      ],
+      "effects_fail": []
+    },
+    {
+      "id": "investigar",
+      "match": "procur|examin|investig|analis|vasculh|olh(o|ar) (as|o|a) (marca|parede|ch[aã]o|giz)",
+      "skill": "Investigação",
+      "attr": "int",
+      "dc": 12,
+      "uses_action": true,
+      "ask": "Há marcas no chão e no giz da parede. {nome}, role Investigação, CD {cd}.",
+      "success": "As marcas de giz são de mineiro: setas apontando para o túnel norte, cada vez mais apressadas.",
+      "fail": "Riscos, poeira e mais riscos. Nada que faça sentido agora.",
+      "effects_success": [
+        {
+          "type": "bible_note",
+          "name": "Durrin",
+          "text": "As setas de giz dele apontam para o túnel norte."
+        }
+      ],
+      "effects_fail": []
+    },
+    {
+      "id": "escalar",
+      "match": "escal|subir|pular|saltar|empurr",
+      "skill": "Atletismo",
+      "attr": "for",
+      "dc": 13,
+      "ask": "A parede é úmida, mas tem apoios. {nome}, role Atletismo, CD {cd}.",
+      "success": "Do alto, {nome} vê o que ninguém via: um segundo túnel atrás do poço de ventilação.",
+      "fail": "{nome} escorrega e volta ao chão com mais pressa do que dignidade.",
+      "effects_success": [
+        {
+          "type": "bible_note",
+          "name": "Poço de ventilação",
+          "text": "Há um túnel escondido atrás dele."
+        }
+      ],
+      "effects_fail": []
+    },
+    {
+      "id": "absurdo",
+      "match": "drag[aã]o|explod|voar|teleport|derrubar a mina",
+      "skill": "Atletismo",
+      "attr": "for",
+      "dc": 20,
+      "absurd": true,
+      "ask": "Isso é muito ambicioso para quem está no nível 3. {nome}, role Atletismo, CD {cd}.",
+      "success": "Contra todas as probabilidades, funciona. Ninguém na mesa vai esquecer isso.",
+      "fail": "Não funciona. Mas foi bonito de ver.",
+      "effects_success": [],
+      "effects_fail": []
+    }
+  ],
+  "rumors": [
+    {
+      "text": "{alvo} gagueja: \"O Grisk levou os humanos lá pra baixo, pelo poço! Ele disse que a coisa lá embaixo tem fome.\"",
+      "bible": {
+        "name": "Grisk",
+        "text": "Levou os mineiros para baixo, pelo poço de ventilação."
+      }
+    },
+    {
+      "text": "{alvo} aponta para o túnel norte: \"Os que tentaram fugir foram por ali. Nenhum voltou.\"",
+      "bible": {
+        "name": "Túnel norte",
+        "text": "Mineiros tentaram fugir por ali."
+      }
+    },
+    {
+      "text": "\"A voz no poço não é de goblin\", sussurra {alvo}. \"Nem o Grisk desce até o fundo.\"",
+      "bible": {
+        "name": "A voz no poço",
+        "text": "Até os goblins têm medo dela."
+      }
+    }
+  ],
+  "rumor_repeat": [
+    "{alvo} já contou tudo o que sabe. Agora só repete as mesmas coisas, cada vez mais nervoso."
+  ],
+  "ask_target": [
+    "Com quem, exatamente, {nome}? Clique no token ou diga o nome."
+  ],
+  "too_far": [
+    "{alvo} está longe demais para ouvir isso, {nome}. Chegue mais perto primeiro."
+  ],
+  "clarify": [
+    "Interessante, {nome}. E o que exatamente você espera conseguir com isso?",
+    "Não entendi o plano, {nome}. Diga o que quer fazer e com quem, que eu digo o que rolar.",
+    "Ousado. Mas explica melhor: o que você faz, e o que espera que aconteça?"
+  ]
+}

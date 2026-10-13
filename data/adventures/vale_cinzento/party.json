@@ -1,0 +1,264 @@
+[
+  {
+    "id": "lia",
+    "name": "Lia",
+    "player": "Jogador 1",
+    "color": "#3e9a8f",
+    "pos": [
+      0.27,
+      0.62
+    ],
+    "profile": {
+      "background": "Acólita de um mosteiro de sineiros que caiu em silêncio.",
+      "traits": "Fala baixo, mas nunca hesita. Coleciona badalos quebrados.",
+      "ideals": "Todo som merece ser ouvido, até o último.",
+      "bonds": "Quer descobrir por que os sinos do mosteiro pararam.",
+      "flaws": "Confia demais em quem pede ajuda chorando.",
+      "bio": "Lia cresceu entre cordas e bronze. Na noite em que todos os sinos do mosteiro se calaram ao mesmo tempo, só o dela continuou tocando. Desde então ele toca sozinho quando há perigo por perto, e ela aprendeu a ouvir o que ele avisa."
+    },
+    "classes": [
+      {
+        "class_id": "cleric",
+        "level": 3,
+        "subclass_id": "life_domain"
+      }
+    ],
+    "species_id": "human",
+    "species_choice": {
+      "skillful": "perception"
+    },
+    "background_id": "acolyte",
+    "method": "standard",
+    "base_scores": {
+      "str": 13,
+      "dex": 12,
+      "con": 14,
+      "int": 8,
+      "wis": 15,
+      "cha": 10
+    },
+    "bg_bonus": {
+      "wis": 2,
+      "cha": 1
+    },
+    "skills": [
+      "medicine",
+      "persuasion"
+    ],
+    "equipment_option": "A",
+    "bg_equipment_option": "A",
+    "options": {
+      "divine_order": "thaumaturge",
+      "versatile_feat": "alert",
+      "magic_initiate": {
+        "list": "cleric",
+        "ability": "wis",
+        "cantrips": [
+          "light",
+          "resistance"
+        ],
+        "spell": "healing_word"
+      }
+    },
+    "cantrips": [
+      "sacred_flame",
+      "guidance",
+      "thaumaturgy",
+      "spare_the_dying"
+    ],
+    "spells": [
+      "healing_word",
+      "guiding_bolt",
+      "shield_of_faith",
+      "command",
+      "spiritual_weapon",
+      "hold_person"
+    ]
+  },
+  {
+    "id": "borin",
+    "name": "Borin",
+    "player": "Jogador 2",
+    "color": "#b8733d",
+    "pos": [
+      0.34,
+      0.7
+    ],
+    "profile": {
+      "background": "Mineiro de clã, expulso depois de um desabamento que não foi culpa dele.",
+      "traits": "Bate na parede antes de entrar em qualquer túnel. Nunca explica por quê.",
+      "ideals": "Ninguém fica para trás debaixo da terra.",
+      "bonds": "O irmão mais novo trabalhava nesta mina.",
+      "flaws": "Teimoso a ponto de discutir com pedra.",
+      "bio": "Borin conhece minas pelo cheiro. Esta aqui cheira errado: muito silêncio, pouca poeira. Ele veio pelo resgate, mas também para provar que o clã estava errado sobre ele."
+    },
+    "classes": [
+      {
+        "class_id": "fighter",
+        "level": 3,
+        "subclass_id": "champion"
+      }
+    ],
+    "species_id": "dwarf",
+    "background_id": "soldier",
+    "method": "standard",
+    "base_scores": {
+      "str": 15,
+      "dex": 13,
+      "con": 14,
+      "int": 10,
+      "wis": 12,
+      "cha": 8
+    },
+    "bg_bonus": {
+      "str": 2,
+      "con": 1
+    },
+    "skills": [
+      "perception",
+      "survival"
+    ],
+    "equipment_option": "A",
+    "bg_equipment_option": "A",
+    "options": {
+      "fighting_style": "great_weapon_fighting",
+      "weapon_masteries": [
+        "greatsword",
+        "flail",
+        "javelin"
+      ]
+    }
+  },
+  {
+    "id": "seren",
+    "name": "Seren",
+    "player": "Jogador 3",
+    "color": "#6f86c9",
+    "pos": [
+      0.2,
+      0.72
+    ],
+    "profile": {
+      "background": "Copista de uma biblioteca de torre, autodidata em magia.",
+      "traits": "Corrige a gramática de inimigos durante o combate.",
+      "ideals": "Conhecimento guardado é conhecimento perdido.",
+      "bonds": "Um mapa antigo da mina, roubado da biblioteca, está no seu grimório.",
+      "flaws": "Toca em qualquer runa que encontra.",
+      "bio": "Seren leu sobre esta mina num livro que não deveria existir. Segundo ele, os mineiros não fugiram: cavaram fundo demais e encontraram algo que respondeu."
+    },
+    "classes": [
+      {
+        "class_id": "wizard",
+        "level": 3,
+        "subclass_id": "evoker"
+      }
+    ],
+    "species_id": "elf",
+    "species_choice": {
+      "lineage": "high",
+      "keen_senses": "perception"
+    },
+    "background_id": "sage",
+    "method": "standard",
+    "base_scores": {
+      "str": 8,
+      "dex": 14,
+      "con": 13,
+      "int": 15,
+      "wis": 12,
+      "cha": 10
+    },
+    "bg_bonus": {
+      "int": 2,
+      "con": 1
+    },
+    "skills": [
+      "investigation",
+      "insight"
+    ],
+    "equipment_option": "A",
+    "bg_equipment_option": "A",
+    "options": {
+      "magic_initiate": {
+        "list": "wizard",
+        "ability": "int",
+        "cantrips": [
+          "minor_illusion",
+          "shocking_grasp"
+        ],
+        "spell": "shield"
+      }
+    },
+    "cantrips": [
+      "fire_bolt",
+      "ray_of_frost",
+      "mage_hand"
+    ],
+    "spells": [
+      "magic_missile",
+      "burning_hands",
+      "thunderwave",
+      "mage_armor",
+      "scorching_ray",
+      "shatter"
+    ]
+  },
+  {
+    "id": "pip",
+    "name": "Pip",
+    "player": "Jogador 4",
+    "color": "#8fa349",
+    "pos": [
+      0.38,
+      0.55
+    ],
+    "profile": {
+      "background": "Batedor de carteiras com contrato de silêncio com a guilda local.",
+      "traits": "Conta piadas quando está com medo. Está sempre com medo.",
+      "ideals": "Liberdade: ninguém é dono de ninguém.",
+      "bonds": "Deve dinheiro a quem contratou o resgate.",
+      "flaws": "Não resiste a um bolso desprotegido, nem o de aliados.",
+      "bio": "Pip aceitou o trabalho para pagar uma dívida. Encontrou um dardo envenenado logo na entrada e agora jura que a mina tem algo contra ele pessoalmente."
+    },
+    "classes": [
+      {
+        "class_id": "rogue",
+        "level": 3,
+        "subclass_id": "thief"
+      }
+    ],
+    "species_id": "halfling",
+    "background_id": "criminal",
+    "method": "standard",
+    "base_scores": {
+      "str": 8,
+      "dex": 15,
+      "con": 14,
+      "int": 12,
+      "wis": 13,
+      "cha": 10
+    },
+    "bg_bonus": {
+      "dex": 2,
+      "con": 1
+    },
+    "skills": [
+      "acrobatics",
+      "perception",
+      "deception",
+      "investigation"
+    ],
+    "expertise": [
+      "stealth",
+      "perception"
+    ],
+    "equipment_option": "A",
+    "bg_equipment_option": "A",
+    "options": {
+      "weapon_masteries": [
+        "shortsword",
+        "shortbow"
+      ]
+    }
+  }
+]

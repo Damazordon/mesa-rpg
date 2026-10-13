@@ -1,0 +1,5 @@
+[
+  {"id": "gob_a", "name": "Goblin A", "ac": 15, "hp": 7, "hp_max": 7, "to_hit": 4, "damage": "1d6+2", "dtype": "cortante", "dex": 2, "color": "#7d8a3a", "pos": [0.64, 0.42], "conditions": []},
+  {"id": "gob_b", "name": "Goblin B", "ac": 15, "hp": 7, "hp_max": 7, "to_hit": 4, "damage": "1d6+2", "dtype": "perfurante", "dex": 2, "color": "#7d8a3a", "pos": [0.71, 0.56], "conditions": [{"id": "caido", "rounds": 1}]},
+  {"id": "hob", "name": "Hobgoblin", "ac": 18, "hp": 11, "hp_max": 11, "to_hit": 3, "damage": "1d8+1", "dtype": "cortante", "dex": 1, "color": "#9a4a34", "pos": [0.78, 0.36], "conditions": []}
+]

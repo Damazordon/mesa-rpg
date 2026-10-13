@@ -1,0 +1,93 @@
+{
+  "id": "cyberpunk",
+  "name": "Cyberpunk",
+  "description": "Megacorporações, implantes e redes. As regras são as mesmas; só os nomes mudam: magia vira tecnologia, espécies viram modificações.",
+  "currency": "créditos",
+  "tone": "neon, cínico e corporativo",
+  "rename": {
+    "class": {
+      "barbarian": "Brutamontes Cromado",
+      "bard": "Influenciador",
+      "cleric": "Médico de Combate",
+      "druid": "Biohacker",
+      "fighter": "Mercenário",
+      "monk": "Lutador Cibernético",
+      "paladin": "Executor Corporativo",
+      "ranger": "Caçador de Recompensas",
+      "rogue": "Infiltrador",
+      "sorcerer": "Mutante Psiônico",
+      "warlock": "Hacker de Contrato",
+      "wizard": "Netrunner"
+    },
+    "species": {
+      "human": "Humano",
+      "dwarf": "Ciborgue Pesado",
+      "elf": "Sintético",
+      "gnome": "Microtécnico",
+      "halfling": "Compacto",
+      "dragonborn": "Exo-Reptiliano",
+      "goliath": "Titã Gênico",
+      "orc": "Mutante",
+      "tiefling": "Implantado"
+    },
+    "background": {
+      "acolyte": "Ex-funcionário de clínica",
+      "criminal": "Gangue de rua",
+      "sage": "Pesquisador corporativo",
+      "soldier": "Ex-militar"
+    },
+    "weapon": {
+      "dagger": "Faca de combate",
+      "shortsword": "Lâmina curta",
+      "longsword": "Lâmina monomolecular",
+      "greatsword": "Espada vibratória",
+      "shortbow": "Pistola leve",
+      "longbow": "Rifle",
+      "light_crossbow": "Pistola pesada",
+      "heavy_crossbow": "Fuzil",
+      "hand_crossbow": "Pistola de bolso",
+      "club": "Bastão elétrico",
+      "mace": "Martelo hidráulico",
+      "quarterstaff": "Bastão telescópico",
+      "javelin": "Dardo explosivo",
+      "sling": "Lançador de pregos",
+      "scimitar": "Facão",
+      "rapier": "Florete de carbono",
+      "warhammer": "Marreta pneumática",
+      "greataxe": "Machado de demolição",
+      "handaxe": "Machadinha tática",
+      "spear": "Lança elétrica",
+      "flail": "Corrente de aço",
+      "whip": "Chicote de fibra"
+    },
+    "armor": {
+      "padded_armor": "Roupa reforçada",
+      "leather_armor": "Jaqueta blindada",
+      "studded_leather_armor": "Colete balístico",
+      "chain_shirt": "Malha de kevlar",
+      "scale_mail": "Placas táticas",
+      "breastplate": "Peitoral de compósito",
+      "half_plate_armor": "Exoesqueleto leve",
+      "ring_mail": "Malha antiga",
+      "chain_mail": "Exotraje",
+      "splint_armor": "Blindagem pesada",
+      "plate_armor": "Armadura de combate",
+      "shield": "Escudo balístico"
+    },
+    "dtype": {
+      "fire": "térmico",
+      "lightning": "elétrico",
+      "force": "cinético",
+      "radiant": "plasma",
+      "necrotic": "bioquímico",
+      "thunder": "sônico",
+      "psychic": "neural",
+      "cold": "criogênico"
+    },
+    "monster": {
+      "goblin_warrior": "Pivete de gangue",
+      "goblin_boss": "Chefe de gangue",
+      "hobgoblin_warrior": "Segurança de corporação"
+    }
+  }
+}

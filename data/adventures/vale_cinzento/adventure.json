@@ -1,0 +1,137 @@
+{
+  "id": "vale_cinzento",
+  "title": "Resgate em Vale Cinzento",
+  "theme": "mistico",
+  "synopsis": "Mineiros sumiram numa mina tomada por goblins. O grupo desce para resgatá-los e descobre que os goblins também têm medo do que vive mais fundo.",
+  "level_range": [
+    3,
+    5
+  ],
+  "start_scene": "galeria",
+  "scenes": [
+    {
+      "id": "galeria",
+      "title": "Capítulo 1: a galeria principal",
+      "background": "mina_galeria",
+      "pins": [
+        {
+          "name": "Carrinho tombado",
+          "pos": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "name": "Túnel norte",
+          "pos": [
+            0.72,
+            0.1
+          ]
+        },
+        {
+          "name": "Poço de ventilação",
+          "pos": [
+            0.13,
+            0.2
+          ]
+        }
+      ],
+      "intro": "A lanterna de Borin revela trilhos que somem na escuridão. Entre eles, três vultos baixos se levantam de trás de um carrinho tombado. Um deles ri. O outro já está mirando.",
+      "victory": "O último goblin cai sobre os trilhos. Na parede, um risco de giz fresco aponta para o túnel norte, e de lá vem um som de corrente sendo arrastada.",
+      "defeat": "A lanterna rola pelo chão e apaga. A última coisa que vocês ouvem é o riso dos goblins e, mais fundo, algo maior respondendo.",
+      "encounter": {
+        "monsters": [
+          {
+            "id": "gob_a",
+            "monster_id": "goblin_warrior",
+            "name": "Goblin A",
+            "pos": [
+              0.64,
+              0.42
+            ],
+            "color": "#7d8a3a"
+          },
+          {
+            "id": "gob_b",
+            "monster_id": "goblin_warrior",
+            "name": "Goblin B",
+            "pos": [
+              0.71,
+              0.56
+            ],
+            "color": "#7d8a3a",
+            "conditions": [
+              "prone"
+            ]
+          },
+          {
+            "id": "hob",
+            "monster_id": "hobgoblin_warrior",
+            "name": "Hobgoblin",
+            "pos": [
+              0.78,
+              0.36
+            ],
+            "color": "#9a4a34",
+            "boss": true
+          },
+          {
+            "id": "gob_c",
+            "monster_id": "goblin_warrior",
+            "name": "Goblin C",
+            "pos": [
+              0.83,
+              0.62
+            ],
+            "color": "#7d8a3a"
+          },
+          {
+            "id": "boss",
+            "monster_id": "goblin_boss",
+            "name": "Chefe Goblin",
+            "pos": [
+              0.86,
+              0.45
+            ],
+            "color": "#6f7a2a",
+            "boss": true
+          }
+        ]
+      },
+      "party_start": [
+        [
+          0.27,
+          0.62
+        ],
+        [
+          0.34,
+          0.7
+        ],
+        [
+          0.2,
+          0.72
+        ],
+        [
+          0.38,
+          0.55
+        ],
+        [
+          0.24,
+          0.82
+        ],
+        [
+          0.31,
+          0.48
+        ],
+        [
+          0.15,
+          0.6
+        ],
+        [
+          0.42,
+          0.78
+        ]
+      ]
+    }
+  ]
+}

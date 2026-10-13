@@ -1,0 +1,650 @@
+[
+    {
+        "id": "lia",
+        "name": "Lia",
+        "player": "Jogador 1",
+        "class": "Guardiã dos Sinos",
+        "custom_class": true,
+        "species": "Humana",
+        "level": 3,
+        "color": "#3e9a8f",
+        "hp": 21,
+        "hp_max": 24,
+        "res_name": "Ressonância",
+        "res": 2,
+        "res_max": 3,
+        "ac": 14,
+        "speed": 9,
+        "attrs": {
+            "for": 10,
+            "des": 14,
+            "con": 13,
+            "int": 11,
+            "sab": 12,
+            "car": 16
+        },
+        "saves": [
+            "Carisma",
+            "Sabedoria"
+        ],
+        "skills": [
+            {
+                "name": "Atuação",
+                "bonus": 5
+            },
+            {
+                "name": "Intimidação",
+                "bonus": 5
+            },
+            {
+                "name": "Percepção",
+                "bonus": 3
+            },
+            {
+                "name": "Religião",
+                "bonus": 2
+            }
+        ],
+        "conditions": [
+            {
+                "id": "abencoado",
+                "rounds": 3
+            }
+        ],
+        "pos": [
+            0.27,
+            0.62
+        ],
+        "abilities": [
+            {
+                "id": "badalada",
+                "name": "Badalada Sombria",
+                "kind": "spell",
+                "target": "single",
+                "to_hit": 5,
+                "damage": "1d6+3",
+                "dtype": "psíquico",
+                "cost": 1,
+                "desc": "Um sino invisível ecoa na cabeça do alvo. Gasta 1 de Ressonância.",
+                "range": "ranged",
+                "range_m": 18
+            },
+            {
+                "id": "sino_rachado",
+                "name": "Sino Rachado",
+                "kind": "spell",
+                "target": "area",
+                "to_hit": 5,
+                "damage": "2d4",
+                "dtype": "trovejante",
+                "cost": 2,
+                "desc": "Onda sonora em área. Atinge aliados dentro do círculo. Gasta 2 de Ressonância.",
+                "range_m": 9,
+                "area_m": 3,
+                "range": "spell"
+            },
+            {
+                "id": "martelo",
+                "name": "Martelo leve",
+                "kind": "attack",
+                "target": "single",
+                "to_hit": 2,
+                "damage": "1d6",
+                "dtype": "contundente",
+                "desc": "Ataque corpo a corpo simples.",
+                "range": "melee",
+                "range_m": 1.5
+            },
+            {
+                "id": "pocao",
+                "name": "Poção de cura",
+                "kind": "heal",
+                "target": "self",
+                "damage": "2d4+2",
+                "desc": "Recupera 2d4+2 pontos de vida. Restam 2.",
+                "item": true
+            }
+        ],
+        "upgrade_points": 2,
+        "upgrades": [
+            {
+                "name": "Ressonância ampliada",
+                "desc": "+1 no máximo de Ressonância.",
+                "cost": 2
+            },
+            {
+                "name": "Badalada dupla",
+                "desc": "Badalada Sombria pode mirar dois alvos próximos.",
+                "cost": 3
+            },
+            {
+                "name": "Treino com armadura média",
+                "desc": "Proficiência em armadura média.",
+                "cost": 1
+            }
+        ],
+        "upgrades_owned": [
+            "Eco persistente"
+        ],
+        "profile": {
+            "background": "Acólita de um mosteiro de sineiros que caiu em silêncio.",
+            "traits": "Fala baixo, mas nunca hesita. Coleciona badalos quebrados.",
+            "ideals": "Todo som merece ser ouvido, até o último.",
+            "bonds": "Quer descobrir por que os sinos do mosteiro pararam.",
+            "flaws": "Confia demais em quem pede ajuda chorando.",
+            "bio": "Lia cresceu entre cordas e bronze. Na noite em que todos os sinos do mosteiro se calaram ao mesmo tempo, só o dela continuou tocando. Desde então ele toca sozinho quando há perigo por perto, e ela aprendeu a ouvir o que ele avisa."
+        },
+        "inventory": [
+            {
+                "name": "Sino de bronze rachado",
+                "qty": 1,
+                "note": "foco de conjuração"
+            },
+            {
+                "name": "Martelo leve",
+                "qty": 1,
+                "note": "1d6 contundente"
+            },
+            {
+                "name": "Poção de cura",
+                "qty": 2,
+                "note": "2d4+2"
+            },
+            {
+                "name": "Corda de cânhamo",
+                "qty": 1,
+                "note": "15 m"
+            },
+            {
+                "name": "Rações de viagem",
+                "qty": 4,
+                "note": "dias"
+            }
+        ],
+        "coins": "18 po, 6 pp",
+        "spells": [],
+        "slots": {}
+    },
+    {
+        "id": "borin",
+        "name": "Borin",
+        "player": "Jogador 2",
+        "class": "Guerreiro",
+        "species": "Anão",
+        "level": 3,
+        "color": "#b8733d",
+        "hp": 30,
+        "hp_max": 34,
+        "res_name": "Vigor",
+        "res": 1,
+        "res_max": 2,
+        "ac": 18,
+        "speed": 7.5,
+        "attrs": {
+            "for": 17,
+            "des": 10,
+            "con": 16,
+            "int": 9,
+            "sab": 12,
+            "car": 8
+        },
+        "saves": [
+            "Força",
+            "Constituição"
+        ],
+        "skills": [
+            {
+                "name": "Atletismo",
+                "bonus": 5
+            },
+            {
+                "name": "Intimidação",
+                "bonus": 1
+            },
+            {
+                "name": "Sobrevivência",
+                "bonus": 3
+            }
+        ],
+        "conditions": [],
+        "pos": [
+            0.34,
+            0.7
+        ],
+        "abilities": [
+            {
+                "id": "machado",
+                "name": "Machado de batalha",
+                "kind": "attack",
+                "target": "single",
+                "to_hit": 5,
+                "damage": "1d8+3",
+                "dtype": "cortante",
+                "desc": "Ataque corpo a corpo.",
+                "range": "melee",
+                "range_m": 1.5
+            },
+            {
+                "id": "machadinha",
+                "name": "Arremessar machadinha",
+                "kind": "attack",
+                "target": "single",
+                "to_hit": 5,
+                "damage": "1d6+3",
+                "dtype": "cortante",
+                "desc": "Ataque à distância. Restam 2 machadinhas.",
+                "range": "ranged",
+                "range_m": 6
+            },
+            {
+                "id": "folego",
+                "name": "Retomar fôlego",
+                "kind": "heal",
+                "target": "self",
+                "damage": "1d10+3",
+                "cost": 1,
+                "desc": "Recupera 1d10+3 pontos de vida. Gasta 1 de Vigor."
+            }
+        ],
+        "upgrade_points": 1,
+        "upgrades": [
+            {
+                "name": "Estilo de luta: defesa",
+                "desc": "+1 na CA usando armadura.",
+                "cost": 2
+            },
+            {
+                "name": "Arremesso firme",
+                "desc": "+2 de dano com armas de arremesso.",
+                "cost": 1
+            }
+        ],
+        "upgrades_owned": [],
+        "profile": {
+            "background": "Mineiro de clã, expulso depois de um desabamento que não foi culpa dele.",
+            "traits": "Bate na parede antes de entrar em qualquer túnel. Nunca explica por quê.",
+            "ideals": "Ninguém fica para trás debaixo da terra.",
+            "bonds": "O irmão mais novo trabalhava nesta mina.",
+            "flaws": "Teimoso a ponto de discutir com pedra.",
+            "bio": "Borin conhece minas pelo cheiro. Esta aqui cheira errado: muito silêncio, pouca poeira. Ele veio pelo resgate, mas também para provar que o clã estava errado sobre ele."
+        },
+        "inventory": [
+            {
+                "name": "Machado de batalha",
+                "qty": 1,
+                "note": "1d8 cortante"
+            },
+            {
+                "name": "Machadinha",
+                "qty": 2,
+                "note": "arremesso"
+            },
+            {
+                "name": "Cota de malha",
+                "qty": 1,
+                "note": "CA 16"
+            },
+            {
+                "name": "Escudo",
+                "qty": 1,
+                "note": "+2 CA"
+            },
+            {
+                "name": "Picareta",
+                "qty": 1,
+                "note": ""
+            },
+            {
+                "name": "Tocha",
+                "qty": 3,
+                "note": "1 hora cada"
+            }
+        ],
+        "coins": "9 po, 22 pp",
+        "spells": [],
+        "slots": {}
+    },
+    {
+        "id": "seren",
+        "name": "Seren",
+        "player": "Jogador 3",
+        "class": "Maga",
+        "species": "Elfa",
+        "level": 3,
+        "color": "#6f86c9",
+        "hp": 12,
+        "hp_max": 17,
+        "res_name": "Espaços de magia",
+        "res": 3,
+        "res_max": 4,
+        "ac": 12,
+        "speed": 9,
+        "attrs": {
+            "for": 8,
+            "des": 14,
+            "con": 12,
+            "int": 17,
+            "sab": 13,
+            "car": 10
+        },
+        "saves": [
+            "Inteligência",
+            "Sabedoria"
+        ],
+        "skills": [
+            {
+                "name": "Arcanismo",
+                "bonus": 5
+            },
+            {
+                "name": "História",
+                "bonus": 5
+            },
+            {
+                "name": "Investigação",
+                "bonus": 5
+            },
+            {
+                "name": "Percepção",
+                "bonus": 3
+            }
+        ],
+        "conditions": [],
+        "pos": [
+            0.2,
+            0.72
+        ],
+        "abilities": [
+            {
+                "id": "raio_fogo",
+                "name": "Raio de fogo",
+                "kind": "spell",
+                "target": "single",
+                "to_hit": 5,
+                "damage": "1d10",
+                "dtype": "fogo",
+                "desc": "Truque. Ataque mágico à distância.",
+                "range": "ranged",
+                "range_m": 36
+            },
+            {
+                "id": "misseis",
+                "name": "Mísseis mágicos",
+                "kind": "spell",
+                "target": "single",
+                "auto_hit": true,
+                "damage": "3d4+3",
+                "dtype": "energia",
+                "cost": 1,
+                "desc": "Acerta automaticamente. Gasta 1 espaço de magia.",
+                "range": "ranged",
+                "range_m": 36
+            },
+            {
+                "id": "maos_flamejantes",
+                "name": "Mãos flamejantes",
+                "kind": "spell",
+                "target": "area",
+                "to_hit": 5,
+                "damage": "3d6",
+                "dtype": "fogo",
+                "cost": 1,
+                "desc": "Leque de chamas em área. Gasta 1 espaço de magia.",
+                "range_m": 3,
+                "area_m": 3,
+                "range": "spell"
+            }
+        ],
+        "upgrade_points": 0,
+        "upgrades": [
+            {
+                "name": "Magia ampliada",
+                "desc": "Uma vez por descanso, +1d6 de dano numa magia.",
+                "cost": 3
+            },
+            {
+                "name": "Grimório extra",
+                "desc": "Aprende uma magia de 1º nível adicional.",
+                "cost": 2
+            }
+        ],
+        "upgrades_owned": [
+            "Truque adicional"
+        ],
+        "profile": {
+            "background": "Copista de uma biblioteca de torre, autodidata em magia.",
+            "traits": "Corrige a gramática de inimigos durante o combate.",
+            "ideals": "Conhecimento guardado é conhecimento perdido.",
+            "bonds": "Um mapa antigo da mina, roubado da biblioteca, está no seu grimório.",
+            "flaws": "Toca em qualquer runa que encontra.",
+            "bio": "Seren leu sobre esta mina num livro que não deveria existir. Segundo ele, os mineiros não fugiram: cavaram fundo demais e encontraram algo que respondeu."
+        },
+        "inventory": [
+            {
+                "name": "Grimório",
+                "qty": 1,
+                "note": "com o mapa antigo"
+            },
+            {
+                "name": "Cajado",
+                "qty": 1,
+                "note": "foco arcano"
+            },
+            {
+                "name": "Tinta e pena",
+                "qty": 1,
+                "note": ""
+            },
+            {
+                "name": "Vela",
+                "qty": 5,
+                "note": ""
+            }
+        ],
+        "coins": "31 po",
+        "spells": [
+            {
+                "name": "Raio de fogo",
+                "level": 0,
+                "desc": "1d10 de fogo, ataque à distância."
+            },
+            {
+                "name": "Mãos mágicas",
+                "level": 0,
+                "desc": "Uma mão espectral manipula objetos leves."
+            },
+            {
+                "name": "Luz",
+                "level": 0,
+                "desc": "Um objeto brilha como uma tocha."
+            },
+            {
+                "name": "Mísseis mágicos",
+                "level": 1,
+                "desc": "Três dardos de energia que nunca erram."
+            },
+            {
+                "name": "Mãos flamejantes",
+                "level": 1,
+                "desc": "Leque de fogo, 3d6."
+            },
+            {
+                "name": "Escudo arcano",
+                "level": 1,
+                "desc": "+5 na CA até o próximo turno, como reação."
+            },
+            {
+                "name": "Passo nebuloso",
+                "level": 2,
+                "desc": "Teleporte de 9 metros."
+            }
+        ],
+        "slots": {
+            "1": [
+                3,
+                4
+            ],
+            "2": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "id": "pip",
+        "name": "Pip",
+        "player": "Jogador 4",
+        "class": "Ladino",
+        "species": "Halfling",
+        "level": 3,
+        "color": "#8fa349",
+        "hp": 15,
+        "hp_max": 20,
+        "res_name": "Foco",
+        "res": 1,
+        "res_max": 2,
+        "ac": 15,
+        "speed": 7.5,
+        "attrs": {
+            "for": 9,
+            "des": 17,
+            "con": 12,
+            "int": 13,
+            "sab": 10,
+            "car": 14
+        },
+        "saves": [
+            "Destreza",
+            "Inteligência"
+        ],
+        "skills": [
+            {
+                "name": "Acrobacia",
+                "bonus": 5
+            },
+            {
+                "name": "Furtividade",
+                "bonus": 7
+            },
+            {
+                "name": "Prestidigitação",
+                "bonus": 5
+            },
+            {
+                "name": "Enganação",
+                "bonus": 4
+            },
+            {
+                "name": "Investigação",
+                "bonus": 3
+            }
+        ],
+        "conditions": [
+            {
+                "id": "envenenado",
+                "rounds": 2
+            }
+        ],
+        "pos": [
+            0.38,
+            0.55
+        ],
+        "abilities": [
+            {
+                "id": "adaga",
+                "name": "Adaga",
+                "kind": "attack",
+                "target": "single",
+                "to_hit": 5,
+                "damage": "1d4+3",
+                "dtype": "perfurante",
+                "desc": "Ataque corpo a corpo ou arremesso.",
+                "range": "melee",
+                "range_m": 1.5
+            },
+            {
+                "id": "besta",
+                "name": "Besta leve",
+                "kind": "attack",
+                "target": "single",
+                "to_hit": 5,
+                "damage": "1d8+3",
+                "dtype": "perfurante",
+                "desc": "Ataque à distância.",
+                "range": "ranged",
+                "range_m": 24
+            },
+            {
+                "id": "antidoto",
+                "name": "Antídoto",
+                "kind": "cure",
+                "target": "self",
+                "cures": "envenenado",
+                "desc": "Remove a condição Envenenado. Resta 1.",
+                "item": true
+            }
+        ],
+        "upgrade_points": 3,
+        "upgrades": [
+            {
+                "name": "Mãos rápidas",
+                "desc": "Usar objeto como ação bônus.",
+                "cost": 2
+            },
+            {
+                "name": "Golpe baixo",
+                "desc": "+1d6 de dano contra alvos caídos.",
+                "cost": 3
+            },
+            {
+                "name": "Pés leves",
+                "desc": "+1,5 m de deslocamento.",
+                "cost": 1
+            }
+        ],
+        "upgrades_owned": [],
+        "profile": {
+            "background": "Batedor de carteiras com contrato de silêncio com a guilda local.",
+            "traits": "Conta piadas quando está com medo. Está sempre com medo.",
+            "ideals": "Liberdade: ninguém é dono de ninguém.",
+            "bonds": "Deve dinheiro a quem contratou o resgate.",
+            "flaws": "Não resiste a um bolso desprotegido, nem o de aliados.",
+            "bio": "Pip aceitou o trabalho para pagar uma dívida. Encontrou um dardo envenenado logo na entrada e agora jura que a mina tem algo contra ele pessoalmente."
+        },
+        "inventory": [
+            {
+                "name": "Adaga",
+                "qty": 2,
+                "note": "1d4 perfurante"
+            },
+            {
+                "name": "Besta leve",
+                "qty": 1,
+                "note": "1d8 perfurante"
+            },
+            {
+                "name": "Virotes",
+                "qty": 14,
+                "note": ""
+            },
+            {
+                "name": "Ferramentas de ladrão",
+                "qty": 1,
+                "note": ""
+            },
+            {
+                "name": "Antídoto",
+                "qty": 1,
+                "note": "remove Envenenado"
+            },
+            {
+                "name": "Bolsa de moedas alheia",
+                "qty": 1,
+                "note": "de quem?"
+            }
+        ],
+        "coins": "42 po, 3 pl",
+        "spells": [],
+        "slots": {}
+    }
+]

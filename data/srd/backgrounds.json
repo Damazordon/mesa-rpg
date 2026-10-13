@@ -1,0 +1,206 @@
+[
+ {
+  "id": "acolyte",
+  "name": "Acolyte",
+  "abilities": [
+   "int",
+   "wis",
+   "cha"
+  ],
+  "feat": "magic_initiate",
+  "feat_option": "cleric",
+  "skills": [
+   "insight",
+   "religion"
+  ],
+  "tool": "Calligrapher's Supplies",
+  "equipment": [
+   {
+    "option": "A",
+    "items": [
+     {
+      "qty": 1,
+      "item": "Calligrapher's Supplies"
+     },
+     {
+      "qty": 1,
+      "item": "Book (prayers)"
+     },
+     {
+      "qty": 1,
+      "item": "Holy Symbol"
+     },
+     {
+      "qty": 1,
+      "item": "Parchment (10 sheets)"
+     },
+     {
+      "qty": 1,
+      "item": "Robe"
+     }
+    ],
+    "gp": 8
+   },
+   {
+    "option": "B",
+    "items": [],
+    "gp": 50
+   }
+  ]
+ },
+ {
+  "id": "criminal",
+  "name": "Criminal",
+  "abilities": [
+   "dex",
+   "con",
+   "int"
+  ],
+  "feat": "alert",
+  "feat_option": "",
+  "skills": [
+   "sleight_of_hand",
+   "stealth"
+  ],
+  "tool": "Thieves' Tools",
+  "equipment": [
+   {
+    "option": "A",
+    "items": [
+     {
+      "qty": 2,
+      "item": "Daggers"
+     },
+     {
+      "qty": 1,
+      "item": "Thieves' Tools"
+     },
+     {
+      "qty": 1,
+      "item": "Crowbar"
+     },
+     {
+      "qty": 2,
+      "item": "Pouches"
+     },
+     {
+      "qty": 1,
+      "item": "Traveler's Clothes"
+     }
+    ],
+    "gp": 16
+   },
+   {
+    "option": "B",
+    "items": [],
+    "gp": 50
+   }
+  ]
+ },
+ {
+  "id": "sage",
+  "name": "Sage",
+  "abilities": [
+   "con",
+   "int",
+   "wis"
+  ],
+  "feat": "magic_initiate",
+  "feat_option": "wizard",
+  "skills": [
+   "arcana",
+   "history"
+  ],
+  "tool": "Calligrapher's Supplies",
+  "equipment": [
+   {
+    "option": "A",
+    "items": [
+     {
+      "qty": 1,
+      "item": "Quarterstaff"
+     },
+     {
+      "qty": 1,
+      "item": "Calligrapher's Supplies"
+     },
+     {
+      "qty": 1,
+      "item": "Book (history)"
+     },
+     {
+      "qty": 1,
+      "item": "Parchment (8 sheets)"
+     },
+     {
+      "qty": 1,
+      "item": "Robe"
+     }
+    ],
+    "gp": 8
+   },
+   {
+    "option": "B",
+    "items": [],
+    "gp": 50
+   }
+  ]
+ },
+ {
+  "id": "soldier",
+  "name": "Soldier",
+  "abilities": [
+   "str",
+   "dex",
+   "con"
+  ],
+  "feat": "savage_attacker",
+  "feat_option": "",
+  "skills": [
+   "athletics",
+   "intimidation"
+  ],
+  "tool": "Choose one kind of Gaming Set (see \"Equipment\")",
+  "equipment": [
+   {
+    "option": "A",
+    "items": [
+     {
+      "qty": 1,
+      "item": "Spear"
+     },
+     {
+      "qty": 1,
+      "item": "Shortbow"
+     },
+     {
+      "qty": 20,
+      "item": "Arrows"
+     },
+     {
+      "qty": 1,
+      "item": "Gaming Set (same as above)"
+     },
+     {
+      "qty": 1,
+      "item": "Healer's Kit"
+     },
+     {
+      "qty": 1,
+      "item": "Quiver"
+     },
+     {
+      "qty": 1,
+      "item": "Traveler's Clothes"
+     }
+    ],
+    "gp": 14
+   },
+   {
+    "option": "B",
+    "items": [],
+    "gp": 50
+   }
+  ]
+ }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "blinded",
+    "name": "Cego",
+    "abbr": "Ce",
+    "kind": "debuff",
+    "desc": "Não enxerga. Ataques contra ele têm vantagem; os ataques dele têm desvantagem."
+  },
+  {
+    "id": "charmed",
+    "name": "Enfeitiçado",
+    "abbr": "Ef",
+    "kind": "debuff",
+    "desc": "Não pode atacar quem o enfeitiçou. Quem o enfeitiçou tem vantagem em testes sociais com ele."
+  },
+  {
+    "id": "deafened",
+    "name": "Surdo",
+    "abbr": "Su",
+    "kind": "debuff",
+    "desc": "Não ouve e falha em testes que dependem de audição."
+  },
+  {
+    "id": "exhaustion",
+    "name": "Exaustão",
+    "abbr": "Ex",
+    "kind": "debuff",
+    "desc": "Cada nível: -2 em testes de d20 e -1,5 m de deslocamento. No 6º nível, morre."
+  },
+  {
+    "id": "frightened",
+    "name": "Amedrontado",
+    "abbr": "Am",
+    "kind": "debuff",
+    "desc": "Desvantagem em testes e ataques enquanto vê a fonte do medo; não pode se aproximar dela."
+  },
+  {
+    "id": "grappled",
+    "name": "Agarrado",
+    "abbr": "Ag",
+    "kind": "debuff",
+    "desc": "Deslocamento 0. Desvantagem em ataques contra quem não for o agarrador."
+  },
+  {
+    "id": "incapacitated",
+    "name": "Incapacitado",
+    "abbr": "In",
+    "kind": "debuff",
+    "desc": "Não pode agir, usar ação bônus nem reação. Perde a concentração."
+  },
+  {
+    "id": "invisible",
+    "name": "Invisível",
+    "abbr": "Iv",
+    "kind": "buff",
+    "desc": "Não pode ser visto. Seus ataques têm vantagem; ataques contra ele têm desvantagem."
+  },
+  {
+    "id": "paralyzed",
+    "name": "Paralisado",
+    "abbr": "Pa",
+    "kind": "debuff",
+    "desc": "Incapacitado e sem deslocamento. Falha em salvaguardas de For e Des. Acerto a 1,5 m é crítico."
+  },
+  {
+    "id": "petrified",
+    "name": "Petrificado",
+    "abbr": "Pe",
+    "kind": "debuff",
+    "desc": "Virou pedra: incapacitado, resistente a todo dano, falha em For e Des."
+  },
+  {
+    "id": "poisoned",
+    "name": "Envenenado",
+    "abbr": "Ev",
+    "kind": "debuff",
+    "desc": "Desvantagem em ataques e testes de atributo."
+  },
+  {
+    "id": "prone",
+    "name": "Caído",
+    "abbr": "Ca",
+    "kind": "debuff",
+    "desc": "Desvantagem nos próprios ataques. Ataques a 1,5 m têm vantagem; de longe, desvantagem. Levantar custa metade do deslocamento."
+  },
+  {
+    "id": "restrained",
+    "name": "Impedido",
+    "abbr": "Im",
+    "kind": "debuff",
+    "desc": "Deslocamento 0. Desvantagem em ataques e em salvaguardas de Des; ataques contra ele têm vantagem."
+  },
+  {
+    "id": "stunned",
+    "name": "Atordoado",
+    "abbr": "At",
+    "kind": "debuff",
+    "desc": "Incapacitado. Falha em salvaguardas de For e Des; ataques contra ele têm vantagem."
+  },
+  {
+    "id": "unconscious",
+    "name": "Inconsciente",
+    "abbr": "Ic",
+    "kind": "debuff",
+    "desc": "Incapacitado, caído, solta o que segura. Acerto a 1,5 m é crítico."
+  },
+  {
+    "id": "surrendered",
+    "name": "Rendido",
+    "abbr": "Re",
+    "kind": "neutral",
+    "desc": "Saiu da luta. Atacá-lo faz ele voltar a lutar."
+  }
+]

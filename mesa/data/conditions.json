@@ -1,0 +1,19 @@
+[
+  {"id": "abencoado", "name": "Abençoado", "abbr": "Ab", "kind": "buff", "desc": "Soma 1d4 em ataques e salvaguardas."},
+  {"id": "invisivel", "name": "Invisível", "abbr": "Iv", "kind": "buff", "desc": "Não pode ser visto. Ataques dele têm vantagem."},
+  {"id": "concentrando", "name": "Concentrando", "abbr": "Co", "kind": "neutral", "desc": "Mantendo uma magia. Dano pode quebrar a concentração."},
+  {"id": "envenenado", "name": "Envenenado", "abbr": "En", "kind": "debuff", "desc": "Desvantagem em ataques e testes de atributo."},
+  {"id": "amedrontado", "name": "Amedrontado", "abbr": "Am", "kind": "debuff", "desc": "Desvantagem enquanto vê a fonte do medo. Não se aproxima dela."},
+  {"id": "agarrado", "name": "Agarrado", "abbr": "Ag", "kind": "debuff", "desc": "Deslocamento zero."},
+  {"id": "atordoado", "name": "Atordoado", "abbr": "At", "kind": "debuff", "desc": "Incapacitado. Falha em salvaguardas de Força e Destreza."},
+  {"id": "caido", "name": "Caído", "abbr": "Ca", "kind": "debuff", "desc": "No chão. Ataques corpo a corpo contra ele têm vantagem."},
+  {"id": "cego", "name": "Cego", "abbr": "Cg", "kind": "debuff", "desc": "Não enxerga. Ataques dele têm desvantagem."},
+  {"id": "contido", "name": "Contido", "abbr": "Ct", "kind": "debuff", "desc": "Deslocamento zero. Desvantagem em ataques e em salvaguardas de Destreza."},
+  {"id": "enfeiticado", "name": "Enfeitiçado", "abbr": "Ef", "kind": "debuff", "desc": "Não ataca quem o enfeitiçou."},
+  {"id": "exausto", "name": "Exausto", "abbr": "Ex", "kind": "debuff", "desc": "Penalidade em testes que cresce a cada nível de exaustão."},
+  {"id": "incapacitado", "name": "Incapacitado", "abbr": "In", "kind": "debuff", "desc": "Não pode agir nem reagir."},
+  {"id": "inconsciente", "name": "Inconsciente", "abbr": "Ic", "kind": "debuff", "desc": "Fora de combate. Faz testes contra a morte no próprio turno."},
+  {"id": "paralisado", "name": "Paralisado", "abbr": "Pa", "kind": "debuff", "desc": "Incapacitado. Golpes de perto contra ele são críticos."},
+  {"id": "petrificado", "name": "Petrificado", "abbr": "Pe", "kind": "debuff", "desc": "Virou pedra. Resistência a todo dano."},
+  {"id": "surdo", "name": "Surdo", "abbr": "Su", "kind": "debuff", "desc": "Não ouve. Falha em testes que dependem de audição."}
+]

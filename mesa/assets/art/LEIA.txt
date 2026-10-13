@@ -1,0 +1,3 @@
+Coloque aqui a arte do grupo. Nomes de arquivo e formatos estão no README.md, seção
+"Trocando os placeholders pela arte do grupo". Enquanto a pasta estiver vazia, o jogo
+desenha placeholders.

@@ -1,0 +1,84 @@
+{
+  "taunts": {
+    "player_crit": [
+      "Tá, essa foi boa. Não se acostuma.",
+      "Vinte natural. Vou fingir que não doeu.",
+      "Anotado. Vou lembrar disso quando o chefe aparecer, {nome}."
+    ],
+    "player_fumble": [
+      "Nem precisei fazer nada. Você se derrotou sozinho.",
+      "Um. O dado também tem senso de humor, {nome}.",
+      "Vou deixar o goblin rir dessa. Ele mereceu."
+    ],
+    "player_miss": [
+      "Quase. Do jeito que quase não conta.",
+      "O goblin agradece a gentileza, {nome}."
+    ],
+    "enemy_down": [
+      "Tudo bem. Eu tenho mais goblins do que vocês têm pontos de vida.",
+      "Esse era o mais fraco. Os outros estudaram.",
+      "Ok, {nome}. Ponto seu."
+    ],
+    "enemy_hit_hard": [
+      "Isso vai deixar marca, {nome}.",
+      "Eu avisei que eles estudaram."
+    ],
+    "party_down": [
+      "{nome} vai tirar um cochilo. Alguém aí tem poção?",
+      "Calma, ninguém morreu. Ainda."
+    ],
+    "idle": [
+      "Sem pressa. O goblin adora esperar.",
+      "Posso pedir um café enquanto vocês decidem?",
+      "A vela da guilda está queimando, {nome}."
+    ],
+    "plan_absurd": [
+      "Ousado. Burro, mas ousado.",
+      "Adoro quando vocês tentam isso. Role o dado."
+    ],
+    "victory": [
+      "Aproveitem. O próximo eu desenhei pensando em vocês.",
+      "Vitória. Agora olhem o túnel norte e me digam se continuam confiantes."
+    ],
+    "defeat": [
+      "Eu disse que ia ganhar. Jogando limpo, ainda por cima."
+    ],
+    "complaint": [
+      "Tá tudo no histórico. Pode conferir."
+    ]
+  },
+  "moods": {
+    "player_crit": "irritado", "enemy_down": "irritado", "victory": "irritado",
+    "player_fumble": "satisfeito", "player_miss": "satisfeito", "party_down": "satisfeito",
+    "enemy_hit_hard": "satisfeito", "defeat": "satisfeito", "idle": "entediado",
+    "plan_absurd": "satisfeito", "complaint": "neutro"
+  },
+  "mood_text": {
+    "neutro": "observando a mesa",
+    "satisfeito": "satisfeito demais",
+    "irritado": "fingindo que não ligou",
+    "entediado": "batendo os dedos no escudo"
+  },
+  "narration_generic": [
+    "O túnel devolve o eco da sua voz um segundo atrasado. Os goblins trocam olhares, sem saber se isso foi uma ameaça.",
+    "Nada acontece de imediato. Mas o carrinho tombado range, como se algo atrás dele tivesse mudado de posição.",
+    "O cheiro de óleo de lanterna fica mais forte. Alguém, em algum lugar da mina, acabou de acender uma luz."
+  ],
+  "checks": [
+    {"match": "escal|subir|pular|saltar|empurr", "skill": "Atletismo", "attr": "for", "dc": 13, "ask": "A parede é úmida, mas tem apoios. {nome}, role Atletismo, CD 13."},
+    {"match": "escond|esgueir|furtiv|sorrateir", "skill": "Furtividade", "attr": "des", "dc": 14, "ask": "As sombras do carrinho dão cobertura, se você for rápido. {nome}, role Furtividade, CD 14."},
+    {"match": "convenc|persuad|negoci|subornar|conversar", "skill": "Persuasão", "attr": "car", "dc": 15, "ask": "O goblin para de mirar por um segundo, desconfiado. {nome}, role Persuasão, CD 15."},
+    {"match": "procur|examin|investig|analis|olhar", "skill": "Investigação", "attr": "int", "dc": 12, "ask": "Há marcas no chão e no giz da parede. {nome}, role Investigação, CD 12."},
+    {"match": "assust|intimid|grit|ameaç", "skill": "Intimidação", "attr": "car", "dc": 14, "ask": "Os goblins são covardes, mas estão em maior número. {nome}, role Intimidação, CD 14."},
+    {"match": "dragão|explod|voar|teleport|derrubar a mina", "skill": "Atletismo", "attr": "for", "dc": 20, "absurd": true, "ask": "Isso é muito ambicioso para quem está nível 3. {nome}, role Atletismo, CD 20."}
+  ],
+  "check_success": [
+    "Funciona. {nome} consegue, e por um instante os goblins parecem realmente preocupados.",
+    "Sucesso. A mina, pela primeira vez, colabora com {nome}."
+  ],
+  "check_fail": [
+    "Não funciona. {nome} faz barulho suficiente para todo o túnel saber exatamente onde está.",
+    "Falhou. Os goblins não riem alto, mas dá para ver que querem."
+  ],
+  "waiting": "O mestre está decidindo o que o {nome} faz."
+}

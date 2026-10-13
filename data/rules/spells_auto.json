@@ -1,0 +1,665 @@
+{
+ "_doc": "Automação curada. Sobrescreve o que o importador deduziu do texto do SRD. kind: attack, save, heal, buff, auto_hit, temp_hp, teleport, revive, stabilize, smite, mark, cure, manual. Durações em rodadas (1 minuto = 10).",
+ "magic_missile": {
+  "kind": "auto_hit",
+  "target": "enemy",
+  "darts": 3,
+  "upcast_darts": 1,
+  "damage": "1d4+1",
+  "dtype": "force"
+ },
+ "scorching_ray": {
+  "rays": 3,
+  "upcast_rays": 1,
+  "target": "enemy"
+ },
+ "eldritch_blast": {
+  "beams_by_level": {
+   "1": 1,
+   "5": 2,
+   "11": 3,
+   "17": 4
+  },
+  "target": "enemy",
+  "eldritch": true
+ },
+ "fire_bolt": {
+  "target": "enemy"
+ },
+ "ray_of_frost": {
+  "target": "enemy",
+  "on_hit_effect": {
+   "id": "ray_of_frost",
+   "name": "Raio de Gelo",
+   "mods": {
+    "speed_ft": -10
+   },
+   "ends": "start_source"
+  }
+ },
+ "chill_touch": {
+  "target": "enemy",
+  "on_hit_effect": {
+   "id": "chill_touch",
+   "name": "Toque Arrepiante",
+   "mods": {
+    "no_heal": true
+   },
+   "ends": "end_source_next"
+  }
+ },
+ "shocking_grasp": {
+  "target": "enemy",
+  "on_hit_effect": {
+   "id": "shocking_grasp",
+   "name": "Toque Chocante",
+   "mods": {
+    "no_reactions": true
+   },
+   "ends": "start_target"
+  }
+ },
+ "vicious_mockery": {
+  "target": "enemy",
+  "on_fail_effect": {
+   "id": "vicious_mockery",
+   "name": "Zombaria Viciosa",
+   "mods": {
+    "dis_next_attack": true
+   },
+   "ends": "end_target_next"
+  }
+ },
+ "sacred_flame": {
+  "target": "enemy"
+ },
+ "toll_the_dead": {
+  "target": "enemy"
+ },
+ "starry_wisp": {
+  "target": "enemy"
+ },
+ "poison_spray": {
+  "target": "enemy"
+ },
+ "acid_splash": {
+  "origin": "point"
+ },
+ "sorcerous_burst": {
+  "target": "enemy",
+  "damage": "1d8",
+  "dtype_choice": [
+   "acid",
+   "cold",
+   "fire",
+   "lightning",
+   "poison",
+   "psychic",
+   "thunder"
+  ],
+  "dtype": "fire"
+ },
+ "produce_flame": {
+  "kind": "manual",
+  "note": "Conjurar acende a chama; arremessar é uma Ação de Magia nas rodadas seguintes."
+ },
+ "true_strike": {
+  "kind": "manual",
+  "note": "Ataque com arma usando o atributo de conjuração."
+ },
+ "guidance": {
+  "kind": "buff",
+  "target": "ally",
+  "effect": {
+   "id": "guidance",
+   "name": "Orientação",
+   "mods": {
+    "check_dice": "1d4"
+   },
+   "rounds": 10
+  }
+ },
+ "resistance": {
+  "kind": "buff",
+  "target": "ally",
+  "effect": {
+   "id": "resistance",
+   "name": "Resistência",
+   "mods": {
+    "reduce_damage_dice": "1d4"
+   },
+   "rounds": 10
+  }
+ },
+ "spare_the_dying": {
+  "kind": "stabilize",
+  "target": "ally"
+ },
+ "blade_ward": {
+  "kind": "buff",
+  "target": "self",
+  "effect": {
+   "id": "blade_ward",
+   "name": "Proteção contra Lâminas",
+   "mods": {
+    "attacked_dice": "-1d4"
+   },
+   "rounds": 10
+  }
+ },
+ "bless": {
+  "kind": "buff",
+  "target": "ally",
+  "targets": 3,
+  "upcast_targets": 1,
+  "effect": {
+   "id": "bless",
+   "name": "Bênção",
+   "mods": {
+    "attack_dice": "1d4",
+    "save_dice": "1d4"
+   },
+   "rounds": 10
+  }
+ },
+ "bane": {
+  "kind": "save",
+  "save": "cha",
+  "target": "enemy",
+  "targets": 3,
+  "upcast_targets": 1,
+  "on_fail_effect": {
+   "id": "bane",
+   "name": "Perdição",
+   "mods": {
+    "attack_dice": "-1d4",
+    "save_dice": "-1d4"
+   },
+   "rounds": 10
+  }
+ },
+ "shield": {
+  "kind": "reaction_shield",
+  "target": "self",
+  "effect": {
+   "id": "shield",
+   "name": "Escudo Arcano",
+   "mods": {
+    "ac": 5
+   },
+   "ends": "start_source"
+  }
+ },
+ "shield_of_faith": {
+  "kind": "buff",
+  "target": "ally",
+  "effect": {
+   "id": "shield_of_faith",
+   "name": "Escudo da Fé",
+   "mods": {
+    "ac": 2
+   },
+   "rounds": 100
+  }
+ },
+ "mage_armor": {
+  "kind": "buff",
+  "target": "ally",
+  "effect": {
+   "id": "mage_armor",
+   "name": "Armadura Arcana",
+   "mods": {},
+   "rounds": 4800
+  }
+ },
+ "hunters_mark": {
+  "kind": "mark",
+  "target": "enemy",
+  "extra": "1d6",
+  "dtype": "force"
+ },
+ "hex": {
+  "kind": "mark",
+  "target": "enemy",
+  "extra": "1d6",
+  "dtype": "necrotic"
+ },
+ "divine_smite": {
+  "kind": "smite",
+  "damage": "2d8",
+  "dtype": "radiant",
+  "upcast_dice": "1d8",
+  "vs_fiend_undead": "1d8"
+ },
+ "searing_smite": {
+  "kind": "smite",
+  "damage": "1d6",
+  "dtype": "fire",
+  "upcast_dice": "1d6"
+ },
+ "ensnaring_strike": {
+  "kind": "smite",
+  "damage": "0",
+  "dtype": "piercing",
+  "save": "str",
+  "conditions": [
+   "restrained"
+  ],
+  "rounds": 10
+ },
+ "guiding_bolt": {
+  "target": "enemy",
+  "on_hit_effect": {
+   "id": "guiding_bolt",
+   "name": "Raio Guia",
+   "mods": {
+    "attacked_adv_once": true
+   },
+   "ends": "end_source_next"
+  }
+ },
+ "faerie_fire": {
+  "kind": "save",
+  "save": "dex",
+  "origin": "point",
+  "area": {
+   "shape": "cube",
+   "size_ft": 20
+  },
+  "on_fail_effect": {
+   "id": "faerie_fire",
+   "name": "Fogo das Fadas",
+   "mods": {
+    "attacked_adv": true
+   },
+   "rounds": 10
+  }
+ },
+ "sleep": {
+  "kind": "save",
+  "save": "wis",
+  "origin": "point",
+  "area": {
+   "shape": "sphere",
+   "size_ft": 5
+  },
+  "conditions": [
+   "incapacitated"
+  ],
+  "cond_ends": "end_target_next",
+  "then_save_condition": "unconscious",
+  "ends_on_damage": true,
+  "rounds": 10
+ },
+ "hold_person": {
+  "kind": "save",
+  "save": "wis",
+  "target": "enemy",
+  "targets": 1,
+  "upcast_targets": 1,
+  "conditions": [
+   "paralyzed"
+  ],
+  "repeat_save": true,
+  "rounds": 10,
+  "humanoid_only": true
+ },
+ "command": {
+  "kind": "save",
+  "save": "wis",
+  "target": "enemy",
+  "targets": 1,
+  "upcast_targets": 1,
+  "conditions": [
+   "prone"
+  ],
+  "cond_ends": "end_target_next",
+  "note": "Comando automatizado como 'Rasteje' (Caído); outras palavras o mestre narra."
+ },
+ "entangle": {
+  "kind": "save",
+  "save": "str",
+  "origin": "point",
+  "area": {
+   "shape": "cube",
+   "size_ft": 20
+  },
+  "conditions": [
+   "restrained"
+  ],
+  "rounds": 10
+ },
+ "hideous_laughter": {
+  "kind": "save",
+  "save": "wis",
+  "target": "enemy",
+  "targets": 1,
+  "upcast_targets": 1,
+  "conditions": [
+   "prone",
+   "incapacitated"
+  ],
+  "repeat_save": true,
+  "rounds": 10
+ },
+ "charm_person": {
+  "kind": "save",
+  "save": "wis",
+  "target": "enemy",
+  "targets": 1,
+  "upcast_targets": 1,
+  "conditions": [
+   "charmed"
+  ],
+  "rounds": 600,
+  "adv_if_fighting": true
+ },
+ "color_spray": {
+  "kind": "save",
+  "save": "con",
+  "origin": "self",
+  "conditions": [
+   "blinded"
+  ],
+  "cond_ends": "end_source_next"
+ },
+ "dissonant_whispers": {
+  "target": "enemy"
+ },
+ "thunderwave": {
+  "origin": "self",
+  "push_ft": 10
+ },
+ "burning_hands": {
+  "origin": "self"
+ },
+ "lightning_bolt": {
+  "origin": "self"
+ },
+ "fireball": {
+  "origin": "point"
+ },
+ "shatter": {
+  "origin": "point"
+ },
+ "moonbeam": {
+  "origin": "point"
+ },
+ "ice_knife": {
+  "target": "enemy",
+  "then_area_save": {
+   "save": "dex",
+   "damage": "2d6",
+   "dtype": "cold",
+   "size_ft": 5
+  }
+ },
+ "chromatic_orb": {
+  "target": "enemy",
+  "damage": "3d8",
+  "dtype_choice": [
+   "acid",
+   "cold",
+   "fire",
+   "lightning",
+   "poison",
+   "thunder"
+  ],
+  "dtype": "fire"
+ },
+ "dragons_breath": {
+  "kind": "manual",
+  "note": "Concede ao alvo a ação de soprar; o motor ainda não cria a ação nova."
+ },
+ "false_life": {
+  "kind": "temp_hp",
+  "target": "self",
+  "temp_hp": "2d4+4",
+  "upcast_flat": 5
+ },
+ "heroism": {
+  "kind": "buff",
+  "target": "ally",
+  "upcast_targets": 1,
+  "effect": {
+   "id": "heroism",
+   "name": "Heroísmo",
+   "mods": {
+    "temp_hp_each_turn": "mod",
+    "immune_cond": [
+     "frightened"
+    ]
+   },
+   "rounds": 10
+  }
+ },
+ "aid": {
+  "kind": "buff",
+  "target": "ally",
+  "targets": 3,
+  "effect": {
+   "id": "aid",
+   "name": "Auxílio",
+   "mods": {
+    "hp_max": 5
+   },
+   "rounds": 4800
+  },
+  "upcast_hp": 5
+ },
+ "misty_step": {
+  "kind": "teleport",
+  "target": "point",
+  "range_ft": 30
+ },
+ "invisibility": {
+  "kind": "buff",
+  "target": "ally",
+  "upcast_targets": 1,
+  "conditions": [
+   "invisible"
+  ],
+  "ends_on_attack": true,
+  "rounds": 600
+ },
+ "revivify": {
+  "kind": "revive",
+  "target": "ally"
+ },
+ "lesser_restoration": {
+  "kind": "cure",
+  "target": "ally",
+  "cures": [
+   "blinded",
+   "deafened",
+   "paralyzed",
+   "poisoned"
+  ]
+ },
+ "protection_from_evil_and_good": {
+  "kind": "buff",
+  "target": "ally",
+  "effect": {
+   "id": "protection_from_evil_and_good",
+   "name": "Proteção contra o Bem e o Mal",
+   "mods": {
+    "attacked_dis_by_types": [
+     "aberration",
+     "celestial",
+     "elemental",
+     "fey",
+     "fiend",
+     "undead"
+    ]
+   },
+   "rounds": 100
+  }
+ },
+ "blur": {
+  "kind": "buff",
+  "target": "self",
+  "effect": {
+   "id": "blur",
+   "name": "Nublar",
+   "mods": {
+    "attacked_dis": true
+   },
+   "rounds": 10
+  }
+ },
+ "mirror_image": {
+  "kind": "manual",
+  "note": "Duplicatas: o mestre resolve qual imagem é atingida."
+ },
+ "web": {
+  "kind": "save",
+  "save": "dex",
+  "origin": "point",
+  "area": {
+   "shape": "cube",
+   "size_ft": 20
+  },
+  "conditions": [
+   "restrained"
+  ],
+  "rounds": 600,
+  "damage": "0"
+ },
+ "hypnotic_pattern": {
+  "kind": "save",
+  "save": "wis",
+  "origin": "point",
+  "area": {
+   "shape": "cube",
+   "size_ft": 30
+  },
+  "conditions": [
+   "charmed",
+   "incapacitated"
+  ],
+  "ends_on_damage": true,
+  "rounds": 10
+ },
+ "fear": {
+  "kind": "save",
+  "save": "wis",
+  "origin": "self",
+  "area": {
+   "shape": "cone",
+   "size_ft": 30
+  },
+  "conditions": [
+   "frightened"
+  ],
+  "rounds": 10
+ },
+ "slow": {
+  "kind": "save",
+  "save": "wis",
+  "origin": "point",
+  "area": {
+   "shape": "cube",
+   "size_ft": 40
+  },
+  "targets": 6,
+  "repeat_save": true,
+  "on_fail_effect": {
+   "id": "slow",
+   "name": "Lentidão",
+   "mods": {
+    "speed_mult": 0.5,
+    "ac": -2,
+    "no_reactions": true,
+    "dex_save": -2
+   },
+   "rounds": 10
+  }
+ },
+ "haste": {
+  "kind": "buff",
+  "target": "ally",
+  "effect": {
+   "id": "haste",
+   "name": "Velocidade",
+   "mods": {
+    "speed_mult": 2.0,
+    "ac": 2,
+    "adv_save": [
+     "dex"
+    ],
+    "extra_action": true
+   },
+   "rounds": 10
+  }
+ },
+ "spirit_guardians": {
+  "origin": "self",
+  "note": "Dano ao conjurar em quem estiver na emanação; o dano contínuo o mestre aplica."
+ },
+ "spiritual_weapon": {
+  "kind": "attack",
+  "attack": "melee",
+  "target": "enemy",
+  "damage": "1d8",
+  "dtype": "force",
+  "add_mod": true,
+  "upcast_dice": "1d8",
+  "range_ft": 60
+ },
+ "heat_metal": {
+  "target": "enemy"
+ },
+ "flaming_sphere": {
+  "origin": "point",
+  "area": {
+   "shape": "sphere",
+   "size_ft": 5
+  }
+ },
+ "sanctuary": {
+  "kind": "buff",
+  "target": "ally",
+  "effect": {
+   "id": "sanctuary",
+   "name": "Santuário",
+   "mods": {
+    "sanctuary": true
+   },
+   "rounds": 10
+  }
+ },
+ "mass_healing_word": {
+  "target": "ally",
+  "targets": 6
+ },
+ "prayer_of_healing": {
+  "target": "ally",
+  "targets": 5
+ },
+ "cure_wounds": {
+  "target": "ally"
+ },
+ "healing_word": {
+  "target": "ally"
+ },
+ "inflict_wounds": {
+  "target": "enemy"
+ },
+ "blindness_deafness": {
+  "kind": "save",
+  "save": "con",
+  "target": "enemy",
+  "targets": 1,
+  "upcast_targets": 1,
+  "conditions": [
+   "blinded"
+  ],
+  "repeat_save": true,
+  "rounds": 10,
+  "note": "Automatizado como Cegueira; Surdez o mestre aplica."
+ },
+ "counterspell": {
+  "kind": "manual",
+  "note": "Reação contra uma magia inimiga: o mestre resolve."
+ }
+}

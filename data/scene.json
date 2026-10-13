@@ -1,0 +1,13 @@
+{
+  "campaign": "Resgate em Vale Cinzento",
+  "chapter": "Capítulo 1: a galeria principal",
+  "background": "mina_galeria",
+  "intro": "A lanterna de Borin revela trilhos que somem na escuridão. Entre eles, três vultos baixos se levantam de trás de um carrinho tombado. Um deles ri. O outro já está mirando.",
+  "victory": "O último goblin cai sobre os trilhos. Na parede, um risco de giz fresco aponta para o túnel norte, e de lá vem um som de corrente sendo arrastada.",
+  "defeat": "A lanterna rola pelo chão e apaga. A última coisa que vocês ouvem é o riso dos goblins e, mais fundo, algo maior respondendo.",
+  "pins": [
+    {"name": "Carrinho tombado", "pos": [0.5, 0.5]},
+    {"name": "Túnel norte", "pos": [0.72, 0.1]},
+    {"name": "Poço de ventilação", "pos": [0.13, 0.2]}
+  ]
+}

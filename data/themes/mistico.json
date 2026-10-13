@@ -1,0 +1,17 @@
+{
+  "id": "mistico",
+  "name": "Místico",
+  "description": "Fantasia sombria: magia rara e perigosa, pactos, ruínas e coisas antigas embaixo da terra. Regras iguais às do livro.",
+  "currency": "PO",
+  "tone": "sombrio e supersticioso",
+  "rename": {
+    "class": {
+      "wizard": "Arcanista",
+      "warlock": "Pactuário",
+      "sorcerer": "Feiticeiro de Sangue",
+      "bard": "Menestrel",
+      "paladin": "Juramentado",
+      "cleric": "Sacerdote"
+    }
+  }
+}

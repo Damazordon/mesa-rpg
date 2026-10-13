@@ -1,0 +1,36 @@
+[
+  {
+    "id": "resgate",
+    "title": "Resgate na mina de Vale Cinzento",
+    "pinned": true,
+    "giver": "Mestra Odila, da guilda dos mineiros",
+    "summary": "Seis mineiros não voltaram do turno da noite. A guilda paga 50 po por cada um trazido vivo.",
+    "objectives": [
+      {"text": "Entrar na mina pela galeria principal", "done": true},
+      {"text": "Descobrir quem armou as armadilhas da entrada", "done": true},
+      {"text": "Encontrar os mineiros desaparecidos (0 de 6)", "done": false},
+      {"text": "Voltar antes que a vela da guilda apague", "done": false}
+    ]
+  },
+  {
+    "id": "irmao",
+    "title": "O irmão de Borin",
+    "pinned": false,
+    "giver": "pessoal",
+    "summary": "Durrin, irmão de Borin, estava no turno desaparecido.",
+    "objectives": [
+      {"text": "Achar algum sinal de Durrin", "done": false}
+    ]
+  },
+  {
+    "id": "sinos",
+    "title": "O sino que toca sozinho",
+    "pinned": false,
+    "giver": "pessoal",
+    "summary": "O sino de Lia começou a tocar assim que o grupo passou pela entrada.",
+    "objectives": [
+      {"text": "Descobrir o que o sino está avisando", "done": false},
+      {"text": "Comparar as runas da mina com o mapa de Seren", "done": false}
+    ]
+  }
+]
